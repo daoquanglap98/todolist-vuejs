@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+        <Header />
+        <TodoList @newItem="newItem = $event" />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header"
+import TodoList from "./components/TodoList"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: "App",
+    components: {
+        Header,
+        TodoList
+    },
+    methods: {
+
+    }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+* {
+    font-family: "Fira Code", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    transition: all ease 0.3s;
+    box-sizing: border-box;
 }
 </style>
